@@ -18,6 +18,15 @@ The maximum length is set to **5000** characters. If it doesn't fit all the comm
 	* commit message (author)
 	* And many more ...
 
+Run it
+------
+
+Add the ruby script to your project and commit it. Make sure ruby is installed on Jenkins. Then configure your Jenkins job to use the build step "execute shell". Enter the following line:
+
+	$ ruby ./changelog.rb
+
+The script will write a file called `change.log` into the same directory. To get the proper data it uses two environment variables, set by Jenkins. It's the current job (`ENV['JOB_NAME']`) and build (`ENV['BUILD_NUMBER']`).
+
 HockeyApp
 ---------
 
@@ -34,4 +43,4 @@ You can use the contents of this file when uploading new versions to [HockeyApp]
 Contribute
 ----------
 
-The current version is very simple. If you miss something feel free to contribute.
+The current version is very simple. If you miss something, feel free to contribute.
